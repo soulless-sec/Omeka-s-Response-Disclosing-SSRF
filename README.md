@@ -10,6 +10,7 @@ Because the retrieved response is subsequently accessible through the applicatio
 
 **Affected Version**:
 - Omeka S 4.2.1
+
 **Vulnerability Type**:
 - CWE-918: Server-Side Request Forgery (SSRF)
 
