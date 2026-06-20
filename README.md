@@ -121,10 +121,10 @@ Before executing outbound requests in  application/src/File/Downloader.php :
 
   1. Resolve destination hostnames to their underlying IP address.
   2. Block requests if the resolved IP matches internal or private ranges:
-    - 127.0.0.0/8  (Loopback)
-    - 10.0.0.0/8 ,  172.16.0.0/12 ,  192.168.0.0/16  (RFC1918 Private Networks)
-    - 169.254.0.0/16  (Cloud Metadata/Link-Local)
-    - ::1  (IPv6 Loopback)
+ - 127.0.0.0/8  (Loopback)
+ - 10.0.0.0/8 ,  172.16.0.0/12 ,  192.168.0.0/16  (RFC1918 Private Networks)
+ - 169.254.0.0/16  (Cloud Metadata/Link-Local)
+ - ::1  (IPv6 Loopback)
   3. Prevent DNS Rebinding (TOCTOU): Ensure the  Laminas\Http\Client  connects explicitly to the validated IP address rather than the original hostname. Pass the original hostname via the HTTP  Host  header to maintain support for virtual hosting.
   4. Validate Redirects: Ensure the HTTP client validates the destination IP of any HTTP redirects before following them.
 
